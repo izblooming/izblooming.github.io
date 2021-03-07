@@ -14,7 +14,7 @@
     <title>nabuki</title>
 </head>
 <body>
-<div class="videoarea" id="view">
+<div class="videoarea" id="videoarea">
 								<div class="vidInner">
                                 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 				<video id="video" style="width: 100%; height: 100%;" controls autoplay loop preload="auto"></video>
@@ -39,7 +39,7 @@
     </div>	
     </div>		
 <script>
-    Split(['#view', '#chat'], {
+    Split(['#videoarea', '#chat'], {
         sizes: [70, 30],
     })
 </script>
