@@ -14,15 +14,59 @@
     <title>nabuki</title>
 </head>
 <body>
-<div class="wrapper">
-    <div id="view">
-        <iframe src="https://player.twitch.tv/?channel=kkkkk22221&parent=izblooming.github.io" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
-    </div>
-    <div id="chat">
-        <script async src="//client.uchat.io/uchat.js"></script>
-        <u-chat room='izblooming' style="width: 100%; height: 100%;"></u-chat>
-    </div>
-</div>
+<div class="bd-content-area">
+	<div class="bd-top">
+
+		<div class="tgl left-side-toggle cursor">
+			<i class="fa fa-chevron-left"></i>
+		</div>
+		<div class="tgl right-side-toggle cursor">
+			<i class="fa fa-chevron-right"></i>
+		</div>
+		<div class="h10"></div>
+		<div class="pull-right">
+			
+			<div class="pull-left">
+				<div class="pull-right reloadwrap">
+					<a href="javascript: reload_vid()" class="reload revid">새로고침<div class="hide">영상</div></a>
+					<a href="javascript: reload_chat()" class="reload rechat">새로고침<div class="hide">채팅</div></a>
+				</div>
+				<div class="circle black-toggle cursor"></div>
+				<div class="circle navy-toggle cursor"></div>
+				<div class="circle gray-toggle cursor"></div>
+				<div class="circle white-toggle cursor"></div>
+			</div>
+		</div>
+				<div class="clearfix"></div>
+	</div>
+
+	<div class="videoarea" id="videoarea">
+								<div class="vidInner">
+				<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+				<video id="video" style="width: 100%; height: 100%;" controls autoplay loop preload="auto"></video>
+				<script>
+				  	if(Hls.isSupported()) {
+						var video = document.getElementById('video');
+						video.volume = 1.0;
+						video.autoplay = true;
+				
+						var hls = new Hls();
+						hls.loadSource('https://gtm-spotv.brightcovecdn.com/abf18bbf3b3f4a0db4a41dd2af7f75c6/ap-northeast-1/5764318566001/profile_0/chunklist.m3u8');
+						hls.attachMedia(video);
+						hls.on(Hls.Events.MANIFEST_PARSED,function() {
+							video.play
+					  });
+					}
+				</script>
+			</div>
+			</div>
+	<div class="h10"></div>
+	<div class="infoProfile">
+		<div class="pull-right copyurl">
+			<div class="murl_link font-14 en cursor">주소복사</div>
+						        		<div class="murl font-14 en">https://gtm-spotv.brightcovecdn.com/abf18bbf3b3f4a0db4a41dd2af7f75c6/ap-northeast-1/5764318566001/profile_0/chunklist.m3u8 <div class="pull-right cursor showmurl"><i class="fa fa-times"></i></div></div>
+        			</div>
+		
 <script>
     Split(['#view', '#chat'], {
         sizes: [75, 25],
