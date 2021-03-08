@@ -17,7 +17,7 @@
 <div class="videoarea" id="videoarea">
 								<div class="vidInner">
                                 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-				<video id="video" style="float: left; width:78%;" controls autoplay loop preload="auto"></video>
+				<video id="video" style="float: left; width:78%; height:100%;" controls autoplay loop preload="auto"></video>
 				<script>
 				  	if(Hls.isSupported()) {
 						var video = document.getElementById('video');
@@ -33,7 +33,7 @@
 					}
 				</script>
 	                   </div>
-	<div id="livechat" style=" float: left; width:22%; height:1000%;">
+	<div id="livechat" style=" float: left; width:22%; height:100%;">
 		<script async src="//client.uchat.io/uchat.js"></script>
 		<u-chat room='nabuki' style="display:inline-block; width:100%; height:100%;"></u-chat>		
 	</div>
